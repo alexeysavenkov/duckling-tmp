@@ -54,11 +54,11 @@ ruleDistances = map go distances
     go :: (Text, String, TDistance.Unit) -> Rule
     go (name, regexPattern, u) = Rule
       { name = name
-      , pattern = [ dimension Distance, regex regexPattern ]
+      , pattern = [ dimension Numeral, regex regexPattern ]
       , prod = \tokens -> case tokens of
-          (Token Distance dd:_) -> Just . Token Distance $ withUnit u dd
+          (Token Numeral NumeralData{TNumeral.value = v}:_) -> Just . Token Distance $ withValue v (unitOnly u)
           _ -> Nothing
       }
 
 rules :: [Rule]
-rules = ruleNumeralAsDistance:ruleDistances
+rules = ruleDistances
