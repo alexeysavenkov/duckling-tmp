@@ -40,7 +40,7 @@ ruleDistances = map go distances
     go :: (Text, String, TDistance.Unit) -> Rule
     go (name, regexPattern, u) = Rule
       { name = name
-      , pattern = [ regex regexPattern ]
+      , pattern = [ dimension Distance, regex regexPattern ]
       , prod = \tokens -> case tokens of
           (Token Distance dd:_) -> Just . Token Distance $ withUnit u dd
           _ -> Nothing
