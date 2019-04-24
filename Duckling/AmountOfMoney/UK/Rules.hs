@@ -51,7 +51,7 @@ ruleUAH :: Rule
 ruleUAH = Rule
   { name = "грн"
   , pattern =
-    [ regex "грн|грив(ень|нями|нях|ня)"
+    [ regex "грн|грив(ень|нями|нях|ня|ні)"
     ]
   , prod = \_ -> Just . Token AmountOfMoney $ currencyOnly UAH
   }
@@ -60,7 +60,7 @@ ruleUAHCent :: Rule
 ruleUAHCent = Rule
   { name = "коп"
   , pattern =
-    [ regex "коп(ійок|ійками|ійках|ійка)?"
+    [ regex "коп(ійок|ійками|ійках|ійка|ійки)?"
     ]
   , prod = \_ -> Just . Token AmountOfMoney $ currencyOnly UAHCent
   }
