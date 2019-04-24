@@ -22,20 +22,6 @@ import Duckling.Distance.Helpers
 import Duckling.Distance.Types (DistanceData(..))
 import Duckling.Types
 import qualified Duckling.Distance.Types as TDistance
-import Duckling.Numeral.Types (NumeralData (..))
-import qualified Duckling.Numeral.Types as TNumeral
-
-ruleNumeralAsDistance :: Rule
-ruleNumeralAsDistance = Rule
-  { name = "number as distance"
-  , pattern =
-    [ dimension Numeral
-    ]
-  , prod = \tokens -> case tokens of
-      (Token Numeral NumeralData {TNumeral.value = v}:_) ->
-        Just . Token Distance $ distance v
-      _ -> Nothing
-  }
 
 distances :: [(Text, String, TDistance.Unit)]
 distances = [ ("<latent dist> km", "км|кілометр(ах|ів|а|и)?", TDistance.Kilometre)
@@ -54,11 +40,12 @@ ruleDistances = map go distances
     go :: (Text, String, TDistance.Unit) -> Rule
     go (name, regexPattern, u) = Rule
       { name = name
-      , pattern = [ dimension Numeral, regex regexPattern ]
+      , pattern = [ dimension Distance, regex regexPattern ]
       , prod = \tokens -> case tokens of
-          (Token Numeral NumeralData{TNumeral.value = v}:_) -> Just . Token Distance $ withValue v (unitOnly u)
+          (Token Distance dd:_) -> Just . Token Distance $ withUnit u dd
           _ -> Nothing
       }
 
 rules :: [Rule]
 rules = ruleDistances
+
