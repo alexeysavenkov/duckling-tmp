@@ -24,13 +24,13 @@ import Duckling.Types
 import qualified Duckling.Distance.Types as TDistance
 
 distances :: [(Text, String, TDistance.Unit)]
-distances = [ ("<latent dist> km", "км|кілометр(а|ів)?", TDistance.Kilometre)
-            , ("<latent dist> feet", "('|фут(а|ів|ах)?)", TDistance.Foot)
-            , ("<latent dist> inch", "(\"|''|дюйм(а|ів|ах)?)", TDistance.Inch)
-            , ("<latent dist> yard", "ярд(а|ів|ах)?", TDistance.Yard)
-            , ("<dist> meters", "м(етр(а|ів|ах)?)?", TDistance.Metre)
-            , ("<dist> centimeters", "см|сантиметр(а|ів|ах)?", TDistance.Centimetre)
-            , ("<dist> millimeters", "мм|міліметр(а|ів|ах)?", TDistance.Millimetre)
+distances = [ ("<latent dist> km", "км|кілометр(ах|ів|а)?", TDistance.Kilometre)
+            , ("<latent dist> feet", "('|фут(ах|ів|а)?)", TDistance.Foot)
+            , ("<latent dist> inch", "(\"|''|дюйм(ах|ів|а)?)", TDistance.Inch)
+            , ("<latent dist> yard", "ярд(ах|ів|а)?", TDistance.Yard)
+            , ("<dist> meters", "м(етр(ах|ів|а)?)?", TDistance.Metre)
+            , ("<dist> centimeters", "см|сантиметр(ах|ів|а)?", TDistance.Centimetre)
+            , ("<dist> millimeters", "мм|міліметр(ах|ів|а)?", TDistance.Millimetre)
             , ("<dist> miles", "мил(я|і|ь|ях)", TDistance.Mile)
             ]
 
