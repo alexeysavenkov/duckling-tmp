@@ -20,7 +20,7 @@ import Duckling.Locale
 import Duckling.Types
 import qualified Duckling.AmountOfMoney.UK.Rules as AmountOfMoney
 import qualified Duckling.Duration.UK.Rules as Duration
-import qualified Duckling.Distance.UK.Rules as Distance
+import qualified Duckling.Distance.RU.Rules as Distance
 import qualified Duckling.Numeral.UK.Rules as Numeral
 import qualified Duckling.Ordinal.UK.Rules as Ordinal
 import qualified Duckling.Time.UK.Rules as Time
