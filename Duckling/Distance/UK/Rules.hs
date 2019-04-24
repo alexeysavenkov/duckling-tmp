@@ -22,6 +22,8 @@ import Duckling.Distance.Helpers
 import Duckling.Distance.Types (DistanceData(..))
 import Duckling.Types
 import qualified Duckling.Distance.Types as TDistance
+import Duckling.Numeral.Types (NumeralData (..))
+import qualified Duckling.Numeral.Types as TNumeral
 
 ruleNumeralAsDistance :: Rule
 ruleNumeralAsDistance = Rule
