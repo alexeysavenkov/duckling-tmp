@@ -25,7 +25,6 @@ import qualified Duckling.Numeral.RO.Rules as Numeral
 import qualified Duckling.Ordinal.RO.Rules as Ordinal
 import qualified Duckling.Quantity.RO.Rules as Quantity
 import qualified Duckling.Temperature.RO.Rules as Temperature
-import qualified Duckling.Time.RO.Rules as Time
 import qualified Duckling.TimeGrain.RO.Rules as TimeGrain
 import qualified Duckling.Volume.RO.Rules as Volume
 
