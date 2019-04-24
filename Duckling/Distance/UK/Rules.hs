@@ -38,14 +38,14 @@ ruleNumeralAsDistance = Rule
   }
 
 distances :: [(Text, String, TDistance.Unit)]
-distances = [ ("<latent dist> km", "км|кілометр(ах|ів|а)?", TDistance.Kilometre)
-            , ("<latent dist> feet", "('|фут(ах|ів|а)?)", TDistance.Foot)
-            , ("<latent dist> inch", "(\"|''|дюйм(ах|ів|а)?)", TDistance.Inch)
-            , ("<latent dist> yard", "ярд(ах|ів|а)?", TDistance.Yard)
-            , ("<dist> meters", "м(етр(ах|ів|а)?)?", TDistance.Metre)
-            , ("<dist> centimeters", "см|сантиметр(ах|ів|а)?", TDistance.Centimetre)
-            , ("<dist> millimeters", "мм|міліметр(ах|ів|а)?", TDistance.Millimetre)
-            , ("<dist> miles", "мил(я|і|ь|ях)", TDistance.Mile)
+distances = [ ("<latent dist> km", "км|кілометр(ах|ів|а|и)?", TDistance.Kilometre)
+            , ("<latent dist> feet", "('|фут(ах|ів|а|и)?)", TDistance.Foot)
+            , ("<latent dist> inch", "(\"|''|дюйм(ах|ів|а|и)?)", TDistance.Inch)
+            , ("<latent dist> yard", "ярд(ах|ів|а|и)?", TDistance.Yard)
+            , ("<dist> meters", "м(етр(ах|ів|а|и)?)?", TDistance.Metre)
+            , ("<dist> centimeters", "см|сантиметр(ах|ів|а|и)?", TDistance.Centimetre)
+            , ("<dist> millimeters", "мм|міліметр(ах|ів|а|и)?", TDistance.Millimetre)
+            , ("<dist> miles", "мил(і|ь|ях|я)", TDistance.Mile)
             ]
 
 ruleDistances :: [Rule]
